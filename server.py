@@ -7,4 +7,4 @@ def home():
     return render_template('game.html')
 
 if __name__ == "__main__":
-    app.run(ssl_context='adhoc')
+    app.run(ssl_context=('cert.pem', 'key.pem'))
