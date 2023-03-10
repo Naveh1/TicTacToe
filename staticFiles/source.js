@@ -12,6 +12,9 @@ currText.textContent = "Current player: ";
 let divs = document.querySelectorAll(".grid-item");
 let counter = 0;
 
+var resetButton = document.getElementById("play-again");
+resetButton.style.display = "none";
+
 function checkWinner(){
     for(let i = 0; i < SIZE; i++){
         if(gameGrid[i][0] != null && gameGrid[i][0] == gameGrid[i][1] && gameGrid[i][0] == gameGrid[i][2]){
@@ -52,10 +55,13 @@ function handleClick(event){
         let winner = checkWinner();
         if(winner != '-'){
             declareWinner(winner);
+            resetButton.style.display = "block";
         }
         else if(counter == SIZE * SIZE){
             currText.textContent = "It's a tie!\t";
             player.textContent = "";
+
+            resetButton.style.display = "block";
         }
 
 }
