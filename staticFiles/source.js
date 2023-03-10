@@ -13,7 +13,6 @@ let divs = document.querySelectorAll(".grid-item");
 let counter = 0;
 
 var resetButton = document.getElementById("play-again");
-resetButton.style.display = "none";
 
 function checkWinner(){
     for(let i = 0; i < SIZE; i++){
